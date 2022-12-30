@@ -73,6 +73,14 @@ class linkedList:
         #     n = n.ref
         # newNode.ref = n.ref
         # n.ref = 
+    def size(self):
+        count =0
+        current = self.head
+        while current != None:
+            count +=1
+            current = current.ref
+            
+        return count
     
     def reverse(self):
         # Uses 3 pointers to reverse the linked list
@@ -86,12 +94,7 @@ class linkedList:
         self.head = previous 
         print("\n\nReversed Link is : ")
         self.traverse()
-       
-        
-            
-            
-        
-            
+                   
         
 node = linkedList()
 node.addStart(10)
@@ -104,8 +107,10 @@ node.addMiddle(5, 12)
 node.traverse()
 
 node.reverse()
-    
-        
+print()
+
+print("Number of nodes in the Linked list is : ", node.size())
+          
         
             
             
