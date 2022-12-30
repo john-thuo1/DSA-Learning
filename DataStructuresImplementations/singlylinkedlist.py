@@ -94,7 +94,16 @@ class linkedList:
         self.head = previous 
         print("\n\nReversed Link is : ")
         self.traverse()
-                   
+    
+    def findNode(self, data):
+        current =self.head
+        while current !=None:
+            if current.data == data:
+                return "Node exists in the Linked List!"
+            current = current.ref
+        
+        return "Element does not exist in the Linked List!"
+                      
         
 node = linkedList()
 node.addStart(10)
@@ -110,11 +119,6 @@ node.reverse()
 print()
 
 print("Number of nodes in the Linked list is : ", node.size())
-          
-        
-            
-            
-            
-        
-        
-        
+print()
+print(node.findNode(115))
+     
