@@ -73,6 +73,29 @@ class linkedList:
         #     n = n.ref
         # newNode.ref = n.ref
         # n.ref = 
+    def deleteStart(self):
+        if self.head == None:
+            return " Singly Linked List is Empty!"
+        else:
+            # second node whose reference is stored in the head node,
+            # becomes the new head node.
+            self.head = self.head.ref
+    def deleteEnd(self):
+        if self.head == None:
+            return "Singly Linked List is Empty"
+        elif self.head.ref is None:
+            self.head = None
+        else:
+            current = self.head 
+            # current.ref contains the reference of the next node 
+            # A -> B  current node is A. reference of B - current.ref
+            # current.ref.ref contains the reference of the node after 
+            # A -> B -> C  returns the reference of C
+            
+            while current.ref.ref != None:
+                current = current.ref
+            current.ref = None
+            
     def size(self):
         count =0
         current = self.head
@@ -113,6 +136,7 @@ node.addStart(13)
 node.addStart(14)
 node.addEnd(15)
 node.addMiddle(5, 12)
+node.deleteEnd()
 node.traverse()
 
 node.reverse()
@@ -121,4 +145,12 @@ print()
 print("Number of nodes in the Linked list is : ", node.size())
 print()
 print(node.findNode(115))
-     
+    
+        
+        
+            
+            
+            
+        
+        
+        
