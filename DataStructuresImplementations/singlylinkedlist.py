@@ -62,7 +62,7 @@ class linkedList:
     
         else:
             newNode = Node(data)
-            # New Node should refer to the next node reference contained in the value n/x
+            # New Node should refer to the next node reference stored in n node(n.ref)
             newNode.ref = n.ref
             # Node x's reference should then point to newNode
             n.ref = newNode
@@ -72,7 +72,7 @@ class linkedList:
         # while n.data != x:
         #     n = n.ref
         # newNode.ref = n.ref
-        # n.ref = 
+        # n.ref = newNode
     def deleteStart(self):
         if self.head == None:
             return " Singly Linked List is Empty!"
