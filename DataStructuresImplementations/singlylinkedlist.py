@@ -95,6 +95,26 @@ class linkedList:
             while current.ref.ref != None:
                 current = current.ref
             current.ref = None
+    def deleteAny(self, data):
+        # Check if the LL is empty
+        if self.head ==None:
+            return "Singly Linked List is Empty"
+        # Check if the node you want to delete is the first node.
+        # If it is the first node self.head.data == data
+        if self.head.data == data:
+            self.deleteStart() # Or self.head = self.head.ref
+        else:
+            current = self.head
+            while current.ref != None:
+                if current.ref.data == data:
+                    break
+                current = current.ref
+            if current.ref is None:
+                print("Node does not exist in the Linked List")
+            else:
+                # Change the reference of the previous node to point to the node that is after the node you want to delete
+                current.ref = current.ref.ref
+                
             
     def size(self):
         count =0
